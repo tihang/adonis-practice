@@ -17,6 +17,9 @@
 const Route = use('Route')
 
 
+//Wildcard route for SPA's
+Route.any('*', ({ view }) => view.render('main'))
+
 Route.get('/navbar', () => "Hello to nav component")
 
 Route
