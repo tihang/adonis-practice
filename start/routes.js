@@ -40,4 +40,4 @@ Route
 
 
 //Wildcard route for SPA's
-Route.any('*', ({ response }) => response.download(Helpers.appRoot('/client/build/index.html')))
+// Route.any('*', ({ response }) => response.download(Helpers.publicPath('dist')))
