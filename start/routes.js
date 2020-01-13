@@ -38,6 +38,6 @@ Route
   .middleware('auth')
 
 
-
+  Route.any('*', ({ view }) => view.render('index.html'))
 //Wildcard route for SPA's
 // Route.any('*', ({ response }) => response.download(Helpers.publicPath('dist')))
