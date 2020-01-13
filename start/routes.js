@@ -15,6 +15,7 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
+const Helpers = user('Helpers')
 
 
 Route.get('/navbar', () => "Hello to nav component")
@@ -39,4 +40,4 @@ Route
 
 
 //Wildcard route for SPA's
-Route.any('*', ({ view }) => view.render('...'))
+Route.any('*', ({ response }) => response.download(Helpers.appRoot('/client/build/index.html')))
