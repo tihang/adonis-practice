@@ -39,4 +39,4 @@ Route
 
 
 //Wildcard route for SPA's
-Route.any('*', ({ view }) => view.render('...))
+Route.any('*', ({ view }) => view.render('...'))
