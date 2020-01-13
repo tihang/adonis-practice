@@ -17,9 +17,6 @@
 const Route = use('Route')
 
 
-//Wildcard route for SPA's
-Route.any('*', ({ view }) => view.render('main'))
-
 Route.get('/navbar', () => "Hello to nav component")
 
 Route
@@ -38,3 +35,8 @@ Route
 Route
   .get('users/:id', 'UserController.show')
   .middleware('auth')
+
+
+
+//Wildcard route for SPA's
+Route.any('*', ({ view }) => view.render('main'))
