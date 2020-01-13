@@ -16,8 +16,22 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
-})
 
-Route.resource('/customers', 'CustomerController').apiOnly()
+Route.get('/navbar', () => "Hello to nav component")
+
+Route
+  .resource('customers', 'CustomerController')
+  .apiOnly()
+
+
+//AUTH routes
+Route
+  .post('login', 'UserController.login')
+
+Route
+  .post('register', 'UserController.register')
+  .middleware('guest')
+
+Route
+  .get('users/:id', 'UserController.show')
+  .middleware('auth')

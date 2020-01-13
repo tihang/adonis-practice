@@ -22,7 +22,7 @@ class CustomerController {
   async index ({ request, response, view }) {
 
       const customers = await Customer.all();
-      response.json(customers)
+      return response.json(customers)
 
   }
 
@@ -51,7 +51,7 @@ class CustomerController {
     const data = request.only(['name', 'description'])
     const user = await Customer.create(data);
 
-    response.json({
+    return response.json({
       'message' : 'User successfully created',
     })
   }
